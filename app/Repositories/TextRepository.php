@@ -12,6 +12,8 @@ class TextRepository implements TextRepositoryInterface
 {
 
     /**
+     * Add a message to the database
+     *
      * @param $text
      * @return bool
      */
@@ -24,6 +26,8 @@ class TextRepository implements TextRepositoryInterface
     }
 
     /**
+     * View all messages
+     *
      * @return \Illuminate\Database\Eloquent\Collection|static[]
      */
     public function all()
@@ -34,6 +38,8 @@ class TextRepository implements TextRepositoryInterface
     }
 
     /**
+     * Delete a message
+     *
      * @param $id
      * @return int
      */
