@@ -7,8 +7,8 @@ This is an application developed using Laravel 5.1 PHP framework.
 
 Please follow the steps to install laravel.
 
-* git clone https://github.com/alexisribault/sniip
 * cd /your/webroot/path/sniip
+* git clone https://github.com/alexisribault/sniip
 * Update the packages composer update (assuming composer is installed to /usr/local/bin)
 * Change database credentials in the .env file (example given below)
 * Run the command to install migration php artisan migrate:install
