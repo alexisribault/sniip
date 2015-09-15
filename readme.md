@@ -1,27 +1,45 @@
-## Laravel PHP Framework
 
-[![Build Status](https://travis-ci.org/laravel/framework.svg)](https://travis-ci.org/laravel/framework)
-[![Total Downloads](https://poser.pugx.org/laravel/framework/d/total.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Stable Version](https://poser.pugx.org/laravel/framework/v/stable.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Unstable Version](https://poser.pugx.org/laravel/framework/v/unstable.svg)](https://packagist.org/packages/laravel/framework)
-[![License](https://poser.pugx.org/laravel/framework/license.svg)](https://packagist.org/packages/laravel/framework)
+## Laravel 5.1 - Sniip test
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as authentication, routing, sessions, queueing, and caching.
+This is an application developed using Laravel 5.1 PHP framework.
 
-Laravel is accessible, yet powerful, providing powerful tools needed for large, robust applications. A superb inversion of control container, expressive migration system, and tightly integrated unit testing support give you the tools you need to build any application with which you are tasked.
+## Install
 
-## Official Documentation
+Please follow the steps to install laravel.
 
-Documentation for the framework can be found on the [Laravel website](http://laravel.com/docs).
+* git clone https://github.com/alexisribault/sniip
+* cd /your/webroot/path/sniip
+* Update the packages composer update (assuming composer is installed to /usr/local/bin)
+* Change database credentails in app/config/database.php (I am using MySQL for database, if you are using any other database, please update corresponding configuration key in this file)
+* Run the command to install migration php artisan migrate:install
+* Create all the required tables: php artisan migrate
+* (optional) Use this command to popluate your database with some sample tasks php artisan db:seed
 
-## Contributing
+That's it! You are now ready to use the application.
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](http://laravel.com/docs/contributions).
+Browse the application: http://localhost/sniip/public
 
-## Security Vulnerabilities
+## .env example file
+```
+APP_ENV=local
+APP_DEBUG=true
+APP_KEY=qjSYrMd0xzGWH9UBdas0KPSNxbWzUjx1
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell at taylor@laravel.com. All security vulnerabilities will be promptly addressed.
+DB_HOST=localhost
+DB_DATABASE=sniip
+DB_USERNAME=root
+DB_PASSWORD=root
 
-### License
+CACHE_DRIVER=file
+SESSION_DRIVER=file
+QUEUE_DRIVER=sync
 
-The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT)
+```
+
+##Version 1.0
+
+The following features are included in this version:
+
+*Display list of messages
+*Add a new message
+*Delete a message
