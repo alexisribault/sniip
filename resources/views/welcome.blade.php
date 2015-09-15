@@ -29,12 +29,16 @@
                 position:relative;
             }
 
-            .content-border, textarea {
+            .content-list, textarea {
                 border: 1px solid #ccc;
             }
 
             textarea {
                 width:100%;
+            }
+
+            .content-list {
+                background-color: white;
             }
 
             .btn-custom{
@@ -53,7 +57,6 @@
             }
 
             .message {
-                background-color: white;
                 padding:10px;
             }
 
@@ -81,10 +84,11 @@
             </div>
         @endif
 
+        <!-- add message form -->
         <div class="container">
             <div class="row">
                 <div class="content col-md-6 col-md-offset-3">
-                    <form class="form-custom" role="form" method="POST" action="{!! url('/post')  !!}" novalidate>
+                    <form class="form-custom" role="form" method="POST" action="{{ route('message.store') }}" novalidate>
                         <input type="hidden" name="_token" id="csrf-token" value="{{ csrf_token() }}">
                         <textarea name="text" rows="2"></textarea>
                         <input type="submit" class="btn btn-custom btn-primary" value="Add">
@@ -99,15 +103,16 @@
                 </div>
             </div>
         </div>
+        <!-- list of messages -->
         <div class="container light-grey">
             <div class="row">
-                <div class="content col-md-6 col-md-offset-3">
-                    <div class="content-border">
+                <div class="col-md-6 col-md-offset-3">
+                    <div class="content-list">
                         @foreach($messages as $message)
                             <div class="message row" >
                                 <div class="col-md-9">
-                                    <p><strong>{!! $message->created_at->format('M j, Y, g:iA') !!}</strong></p>
-                                    <p>{!! $message->text !!}</p>
+                                    <p><strong>{{ $message->created_at->format('M j, Y, g:iA') }}</strong></p>
+                                    <p>{{ $message->text }}</p>
                                 </div>
                                 <div class="col-md-3">
                                     <form method="POST" action="{{ route('message.destroy', [ 'message_id' => $message->id ]) }}" accept-charset="UTF-8">
