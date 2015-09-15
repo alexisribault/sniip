@@ -10,10 +10,9 @@ Please follow the steps to install laravel.
 * git clone https://github.com/alexisribault/sniip
 * cd /your/webroot/path/sniip
 * Update the packages composer update (assuming composer is installed to /usr/local/bin)
-* Change database credentials in app/config/database.php (I am using MySQL for database, if you are using any other database, please update corresponding configuration key in this file)
+* Change database credentials in the .env file (example given below)
 * Run the command to install migration php artisan migrate:install
 * Create all the required tables: php artisan migrate
-* (optional) Use this command to populate your database with some sample tasks php artisan db:seed
 
 That's it! You are now ready to use the application.
 
